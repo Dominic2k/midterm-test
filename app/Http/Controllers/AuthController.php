@@ -32,14 +32,22 @@ class AuthController extends Controller
         return view('page.login');
     }
 
+//    public function login(LoginRequest $request)
+//    {
+//        $credentials = $request->validate([
+//            'email' => 'required|email',
+//            'password' => 'required',
+//        ]);
+//
+//        if (Auth::attempt($credentials)) {
+//            return redirect('/');
+//        }
+//
+//        return back()->withErrors(['email' => 'Thông tin đăng nhập không hợp lệ']);
+//    }
     public function login(LoginRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($request->only(['email', 'password']))) {
             return redirect('/');
         }
 
