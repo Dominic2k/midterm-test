@@ -48,8 +48,10 @@
                                                 </a>
                                             </div>
                                             @if($new->promotion_price != 0)
-                                                <div class="ribbon-wrapper">
-                                                    <div class="ribbon sale">Sale</div>
+                                                <div class="ribbon-wrapper position-absolute top-0 start-0 translate-middle" style="width: 100px; height: 100px; overflow: hidden;">
+                                                    <div class="ribbon sale text-white fw-bold px-3 py-1" style="position: absolute; top: 20px; left: -25px; transform: rotate(-45deg); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);">
+                                                        SALE
+                                                    </div>
                                                 </div>
                                             @endif
                                             <div class="single-item-body">
@@ -80,7 +82,59 @@
                             </div>
                             <div class="row">{{$new_product->links("pagination::bootstrap-4")}}</div>
                         </div>
-
+                        @if(isset($researsSearch))
+                            <div class="beta-products-list">
+                                <h4>Search results</h4>
+                                <div class="beta-products-details">
+                                    <p class="pull-left">{{count($resultsSearch)}} styles found</p>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="row">
+                                    @foreach($resultsSearch as $each)
+                                        <div class="col-sm-3">
+                                            <div class="single-item">
+                                                <div class="single-item-header">
+                                                    <a href="{{ route('product.detail', ['id' =>$each->id]) }}">
+                                                        <img width="200" height="200"
+                                                             src="/source/image/product/{{$each->image}}" alt="">
+                                                    </a>
+                                                </div>
+                                                @if($each->promotion_price != 0)
+                                                    <div class="ribbon-wrapper position-absolute top-0 start-0 translate-middle" style="width: 100px; height: 100px; overflow: hidden;">
+                                                        <div class="ribbon sale text-white fw-bold px-3 py-1" style="position: absolute; top: 20px; left: -25px; transform: rotate(-45deg); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);">
+                                                            SALE
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <div class="single-item-body">
+                                                    <p class="single-item-title">{{$each->name}}</p>
+                                                    <p class="single-item-price" style="text-align:left;font-size: 15px;">
+                                                        @if($each->promotion_price == 0)
+                                                            <span class="flash-sale">{{number_format($each->unit_price)}} Đồng</span>
+                                                        @else
+                                                            <span class="flash-del">{{number_format($each->unit_price)}} Đồng</span>
+                                                            <span class="flash-sale">{{number_format($each->promotion_price)}} Đồng</span>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                                <div class="single-item-caption">
+                                                    <a class="add-to-cart pull-left" href="themgiohang/{{$each->id}}">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                    </a>
+                                                    <a class="add-to-wishlist" href="wishlist/add/{{$each->id}}">
+                                                        <i class="fa fa-heart"></i>
+                                                    </a>
+                                                    <a class="beta-btn primary" href="/detail/{{$each->id}}">Details <i
+                                                            class="fa fa-chevron-right"></i></a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="row">{{$new_product->links("pagination::bootstrap-4")}}</div>
+                            </div>
+                        @endif
                         <div class="space50">&nbsp;</div>
 
                         <!-- Top Products Section -->

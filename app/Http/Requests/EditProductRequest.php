@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Product;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class EditProductRequest extends FormRequest
 {
@@ -22,7 +24,7 @@ class EditProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'editName'=> 'required|string|max:255',
+            'editName'=> 'string|max:255|required',
             'editPrice'=>'required|numeric|min:10000',
             'editPromotionPrice'=>'nullable|numeric|min:1000',
             'editUnit'=>'required|string',

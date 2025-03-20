@@ -9,7 +9,12 @@ use  App\Models\Type_product;
 use  App\Models\Comment;
 class PageController extends Controller
 {
-    public function getIndex(){
+    public function getIndex(Request $request){
+
+//        $search = $request->get('search');
+//        $resultsSearch = Product::query()->where('name',operator: 'like' , value: "%" . $search . "%")->paginate(8);
+//        $resultsSearch->appends(['search' => $search]);
+
         $slide = slide::all();
         $new_product= Product::where('new',1)->paginate(4);
         $promotion_product= Product::where('promotion_price',">",0)->orderBy('promotion_price','desc')->paginate(4);
@@ -28,7 +33,7 @@ class PageController extends Controller
     public function newComment($id, Request $request){
         $comment = new Comment;
         $comment->id_product = $id;
-        $comment->username = "android 1";
+        $comment->username = "Đạt đẹp trai 9.5 điểm";
         $comment->comment = $request->comment;
         $comment->save();
         return redirect()->back();

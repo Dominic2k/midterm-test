@@ -38,9 +38,8 @@ class AdminPageController extends Controller
         if($request->hasFile('inputImage')){
             $image = $request->file('inputImage');
             $nameImage = time().$image->getClientOriginalName();
-            $destinationPath = public_path('source/image/product');// trả về địa chỉ tuyệt đối trong thư mục gộc public bằng public_path
-            $image->move($destinationPath,$nameImage);// Di chuyển file ảnh từ vị trí lưu trữ tạm thời khi tải đến thư mục chit định
-            // $pathImage = $image->storeAs('source/image/product',$nameImage,'public');
+            $destinationPath = public_path('source/image/product');
+            $image->move($destinationPath,$nameImage);// Di chuyển file ảnh
         }
         if(isset($nameImage)){
             $product = new product;
@@ -98,18 +97,16 @@ class AdminPageController extends Controller
             $destinationPath = public_path('source/image/product');
             $image->move($destinationPath,$imageName);
         }
-        if(isset($imageName)){
-            $product->name = $request->editName;
-            $product->id_type = $request->editType;
-            $product->image = $imageName;
-            $product->unit_price = $request->editPrice;
-            $product->promotion_price = $request->editPromotionPrice;
-            $product->unit = $request->editUnit;
-            $product->new = $request->editNew;
-            $product->description = $request->editDescription;
-            $product->save();
-            return redirect('/admin');
-        }
+        $product->name = $request->editName;
+        $product->id_type = $request->editType;
+        $product->image = $imageName;
+        $product->unit_price = $request->editPrice;
+        $product->promotion_price = $request->editPromotionPrice;
+        $product->unit = $request->editUnit;
+        $product->new = $request->editNew;
+        $product->description = $request->editDescription;
+        $product->save();
+        return redirect('/admin');
     }
 
     /**
@@ -117,8 +114,9 @@ class AdminPageController extends Controller
      */
     public function destroy(int $id)
     {
-        $product = product::find($id);
-        $product->delete();
+//        $product = product::find($id);
+//        $product->delete();
+        Product::destroy($id);
         return redirect()->back();
     }
 }

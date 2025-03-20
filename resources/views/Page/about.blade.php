@@ -21,17 +21,17 @@
 
             <div class="history-slider">
                 <div class="history-navigation">
-                    <a data-slide-index="0" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2003</span></a>
-                    <a data-slide-index="1" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2004</span></a>
-                    <a data-slide-index="2" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2005</span></a>
-                    <a data-slide-index="3" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2007</span></a>
-                    <a data-slide-index="4" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2009</span></a>
-                    <a data-slide-index="5" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2011</span></a>
-                    <a data-slide-index="6" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2014</span></a>
+                    <a data-slide-index="0" href="#2003" class="circle"><span class="auto-center">2003</span></a>
+                    <a data-slide-index="1" href="#2004" class="circle"><span class="auto-center">2004</span></a>
+                    <a data-slide-index="2" href="#2005" class="circle"><span class="auto-center">2005</span></a>
+                    <a data-slide-index="3" href="#2007" class="circle"><span class="auto-center">2007</span></a>
+                    <a data-slide-index="4" href="#2009" class="circle"><span class="auto-center">2009</span></a>
+                    <a data-slide-index="5" href="#2011" class="circle"><span class="auto-center">2011</span></a>
+                    <a data-slide-index="6" href="#2014" class="circle"><span class="auto-center">2014</span></a>
                 </div>
 
                 <div class="history-slides">
-                    <div>
+                    <div id="2003">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories7.jpg" alt="">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2004">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories6.jpg" alt="">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2005">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories1.jpg" alt="">
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2007">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories2.jpg" alt="">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2009">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories3.jpg" alt="">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2011">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories4.jpg" alt="">
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div id="2014">
                         <div class="row">
                             <div class="col-sm-5">
                                 <img src="source/assets/dest/images/histories5.jpg" alt="">

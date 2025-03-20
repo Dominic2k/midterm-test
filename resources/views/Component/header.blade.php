@@ -10,8 +10,8 @@
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
 						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="{{ route('register') }}">Đăng kí</a></li>
+						<li><a href="{{ route('login') }}">Đăng nhập</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -26,7 +26,7 @@
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
 						<form role="search" method="get" id="searchform" action="/">
-					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+					        <input type="search" value="" name="search" id="search" placeholder="Nhập từ khóa..." />
 					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
 						</form>
 					</div>

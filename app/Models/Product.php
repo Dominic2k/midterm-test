@@ -9,6 +9,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Product extends Model
 {
     protected $table = "products";
+
+    protected $fillable = [
+        'name',
+        'id_type',
+        'description',
+        'unit_price',
+        'promotion_price',
+        'image',
+        'unit',
+        'new'];
+
+
     public function type_products () : BelongsTo{
         return $this->belongsTo(Type_product::class,'type_id');
     }

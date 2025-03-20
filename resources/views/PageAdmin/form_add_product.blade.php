@@ -32,12 +32,12 @@
             </div>
 
             <div class="form-group">
-                <label for='inputNew'>New</label>
+                <label for='inputNew'>New or Old</label>
                 <input type="number" min=0 class="form-control" name="inputNew" id="inputNew" placeholder="Enter new" required>
             </div>
 
             <div class="form-group">
-                <label for='inputType'>Type</label>
+                <label for='inputType'>Type Id</label>
                 <input type="text" class="form-control" name="inputType" id="inputType" placeholder="Enter type" required>
             </div>
 
